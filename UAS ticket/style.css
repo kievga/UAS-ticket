@@ -1,0 +1,32 @@
+html, body{
+	margin:0px;
+}
+
+#kereta {
+	display: none;
+}
+#pesawat {
+	display: none;
+}
+#kapal {
+	display: none;
+}
+#travel {
+	display: none;
+}
+
+#ker {
+	border:3px dotted #ffcf7a;
+	background-color:#89eeb5;
+}
+#pes {
+	border:3px dotted #ffcf7a;
+	background-color:#91b4eb;
+}
+#kap {
+	border:3px dotted #ffcf7a;
+	background-color:#ffd893;
+}
+#tra {
+	border:3px dotted #ffcf7a;
+	background-color:#ffaa93;

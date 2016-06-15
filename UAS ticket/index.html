@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+<head>
+ <title>Form Tiket</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+input.ng-invalid {
+    background-color: pink;
+}
+</style>
+<script src="js/print.js"></script>
+</head>
+
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+			<div class="row">
+				<center><div id="col1" ng-hide="aa" style="background-color:#89eeb5;">
+					<h1 ng-click="cl1()" style="font-family:courier;">Train Ticket
+					<p id="par1"><img src="img/train.jpg" width="400px" height="200px"></p></h1>
+					<div id="kereta">
+					<table>
+						<tr><td><h4>Name </h4></td>
+						<td> : <input type="text" ng-model="k1" value=""/></td></tr>
+						<tr><td><h4>ID Card Number </h4></td>
+						<td> : <input type="text" ng-model="k2" value=""/></td></tr>
+						<tr><td><h4>Destination </h4></td>
+						<td> : <select ng-model="k3"><option value=""></option>
+						<option value="Jakarta - Bandung">Jakarta - Bandung</option>
+						<option value="Jakarta - Surabaya">Jakarta - Surabaya</option>
+						<option value="Jogja - Surabaya">Jogja - Surabaya</option>
+						<option value="Jogja - Blitar">Jogja - Blitar</option>
+						<option value="Jakarta - Blitar">Jakarta - Blitar</option></select>
+						</td></tr>
+						<tr><td><h4>Depart </h4></td>
+						<td> : <input type="date" ng-model="k4" value=""/></td></tr>
+						<tr><td><h4>Phone </h4></td>
+						<td> : <input type="text" ng-model="k5" value=""/></td></tr>
+						<tr><td><h4>Email </h4></td>
+						<td><form ng-app="" name="myForm"> : <input type="email" name="k9" ng-model="k6" required></td></tr>
+						<tr>
+						<td> <span ng-show="myForm.k9.$error.email"> Not a valid e-mail address</span></td></form></tr>
+					</table>
+					<br/><br/>
+					<div id="ker">
+					<center><table border="1px" width="480px">
+						<tr><td>Name</td>
+						<td> : {{k1}}</td></tr>
+						<tr><td>ID Card Number</td>
+						<td> : {{k2}}</td></tr>
+						<tr><td>Destination</td>
+						<td> : {{k3}}</td></tr>
+						<tr><td>Depart</td>
+						<td> : {{k4}}</td></tr>
+						<tr><td>Phone</td>
+						<td> : {{k5}}</td></tr>
+						<tr><td>Email</td>
+						<td> : {{k6}}</td></tr>
+					</table></center>
+					</div>
+					<br/><br/>
+					<a href="index.html"><button>Submit</button></a>
+					<button onclick="myPrint1()">Print</button>
+					</div>
+				</div>
+				
+				<div id="col2" ng-hide="bb" style="background-color:#91b4eb;">
+				<h1 ng-click="cl2()" style="font-family:courier;">Plane Ticket
+				<p id="par2"><img src="img/plane.jpg" width="400px" height="200px"></p></h1>
+				<div id="pesawat">
+				<table>
+				<tr><td><h4>Name </h4></td>
+				<td> : <input type="text" ng-model="p1" value=""/></td></tr>
+				<tr><td><center><h5>Adult </h5> <input type="text" ng-model="p2" style="width:40px;" value=""/></center></td>
+				<td><center><h5>Children </h5> <input type="text" ng-model="p3" style="width:40px;" value=""/></center></td></tr>
+				<tr><td><h4>From </h4></td>
+				<td> : <select ng-model="p4" ng-options="pes for pes in depart"></select>
+				</td></tr>
+				<tr><td><h4>To </h4></td>
+				<td> : <select ng-model="p5" ng-options="to for to in coming"></select>
+				</td></tr>
+				<tr><td><h4>Depart </h4></td>
+				<td> : <input type="date" ng-model="p6" value=""/></td></tr>
+				<tr><td><h4>Return </h4></td>
+				<td> : <input type="date" ng-model="p7" value=""/></td></tr>
+				<tr><td><h4>Phone </h4></td>
+				<td> : <input type="text" ng-model="p8" value=""/></td></tr>
+				<tr><td><h4>Email </h4></td>
+				<td><form ng-app="" name="myForm"> : <input type="email" name="k9" ng-model="p9" required></td></tr>
+				<tr><td> </td>
+				<td> <span ng-show="myForm.k9.$error.email"> Not a valid e-mail address</span></td></form></tr>
+				</table>
+				<br/>
+				<div id="pes">
+					<center><table border="1px" width="480px">
+						<tr><td>Name</td>
+						<td> : {{p1}}</td></tr>
+						<tr><td>Adult</td>
+						<td> : {{p2}}</td></tr>
+						<tr><td>Children</td>
+						<td> : {{p3}}</td></tr>
+						<tr><td>From</td>
+						<td> : {{p4}}</td></tr>
+						<tr><td>To</td>
+						<td> : {{p5}}</td></tr>
+						<tr><td>Depart</td>
+						<td> : {{p6}}</td></tr>
+						<tr><td>Return</td>
+						<td> : {{p7}}</td></tr>
+						<tr><td>Phone</td>
+						<td> : {{p8}}</td></tr>
+						<tr><td>Email</td>
+						<td> : {{p9}}</td></tr>
+					</table></center>
+				</div>
+				<br/>
+				<a href="index.html"><button>Submit</button></a>
+				<button onclick="myPrint2()">Print</button>
+				</div>
+				</div>
+				</center>
+			</div>
+
+
+			<div class="row">
+				<center><div id="col3" ng-hide="cc" style="background-color:#ffd893;">
+				<h1 ng-click="cl3()" style="font-family:courier;">Shipboard Ticket
+				<p id="par3"><img src="img/ship.jpg" width="400px" height="200px"></p></h1>
+				<div id="kapal">
+				<table>
+						<tr><td><h4>Name </h4></td>
+						<td> : <input type="text" ng-model="l1" value=""/></td></tr>
+						<tr><td><h4>ID Card Number </h4></td>
+						<td> : <input type="text" ng-model="l2" value=""/></td></tr>
+						<tr><td><h4>Passenger </h4></td>
+						<td> : <select ng-model="l3" ng-options="ppl for ppl in pass"></select>
+						</td></tr>
+						<tr><td><h4>From </h4></td>
+						<td> : <select ng-model="l4" ng-options="fr for fr in from1"></select>
+						</td></tr>
+						<tr><td><h4>To </h4></td>
+						<td> : <select ng-model="l5" ng-options="too for too in to1"></select>
+						</td></tr>
+						<tr><td><h4>Depart </h4></td>
+						<td> : <input type="date" ng-model="l6" value=""/></td></tr>
+						<tr><td><h4>Phone </h4></td>
+						<td> : <input type="text" ng-model="l7" value=""/></td></tr>
+						<tr><td><h4>Email </h4></td>
+						<td><form ng-app="" name="myForm"> : <input type="email" name="k9" ng-model="l8" required></td></tr>
+						<tr><td> </td>
+						<td> <span ng-show="myForm.k9.$error.email"> Not a valid e-mail address</span></td></form></tr>
+					</table>
+					<br/><br/>
+					<div id="kap">
+					<center><table border="1px" width="480px">
+						<tr><td>Name</td>
+						<td> : {{l1}}</td></tr>
+						<tr><td>ID Card Number</td>
+						<td> : {{l2}}</td></tr>
+						<tr><td>Passenger</td>
+						<td> : {{l3}}</td></tr>
+						<tr><td>From</td>
+						<td> : {{l4}}</td></tr>
+						<tr><td>To</td>
+						<td> : {{l5}}</td></tr>
+						<tr><td>Depart</td>
+						<td> : {{l6}}</td></tr>
+						<tr><td>Phone</td>
+						<td> : {{l7}}</td></tr>
+						<tr><td>Email</td>
+						<td> : {{l8}}</td></tr>
+					</table></center>
+					</div>
+				<br/><br/>
+				<a href="index.html"><button>Submit</button></a>
+				<button onclick="myPrint3()">Print</button>
+				</div>
+				</div>
+				
+				<div id="col4" ng-hide="dd" style="background-color:#ffaa93;">
+				<h1 ng-click="cl4()" style="font-family:courier;">Travel Ticket
+				<p id="par4"><img src="img/travel.jpg" width="400px" height="200px"></p></h1>
+				<div id="travel">
+				<table>
+						<tr><td><h4>Name </h4></td>
+						<td> : <input type="text" ng-model="t1" value=""/></td></tr>
+						<tr><td><h4>ID Card Number </h4></td>
+						<td> : <input type="text" ng-model="t2" value=""/></td></tr>
+						<tr><td><h4>Passenger </h4></td>
+						<td> : <input type="number" ng-model="t3" style="width:50px;"/>
+						</td></tr>
+						<tr><td><h4>From </h4></td>
+						<td> : <input type="text" ng-model="t4" />
+						</td></tr>
+						<tr><td><h4>To </h4></td>
+						<td> : <input type="text" ng-model="t5" />
+						</td></tr>
+						<tr><td><h4>Depart </h4></td>
+						<td> : <input type="date" ng-model="t6" value=""/></td></tr>
+						<tr><td><h4>Phone </h4></td>
+						<td> : <input type="text" ng-model="t7" value=""/></td></tr>
+						<tr><td><h4>Email </h4></td>
+						<td><form ng-app="" name="myForm"> : <input type="email" name="k9" ng-model="t8" required></td></tr>
+						<tr><td> </td>
+						<td> <span ng-show="myForm.k9.$error.email"> Not a valid e-mail address</span></td></form></tr>
+					</table>
+					<br/><br/>
+					<div id="tra">
+					<center><table border="1px" width="480px">
+						<tr><td>Name</td>
+						<td> : {{t1}}</td></tr>
+						<tr><td>ID Card Number</td>
+						<td> : {{t2}}</td></tr>
+						<tr><td>Passenger</td>
+						<td> : {{t3}}</td></tr>
+						<tr><td>From</td>
+						<td> : {{t4}}</td></tr>
+						<tr><td>To</td>
+						<td> : {{t5}}</td></tr>
+						<tr><td>Depart</td>
+						<td> : {{t6}}</td></tr>
+						<tr><td>Phone</td>
+						<td> : {{t7}}</td></tr>
+						<tr><td>Email</td>
+						<td> : {{t8}}</td></tr>
+					</table></center>
+					</div>
+				<br/><br/>
+				<a href="index.html"><button>Submit</button></a>
+				<button onclick="myPrint4()">Print</button>
+				</div>
+				</div>
+				</center>
+			</div>
+		</div>
+</div>
+
+<script src="js/animate.js"></script>
+<script src="js/controller.js"></script>
+</body>
+</html>
